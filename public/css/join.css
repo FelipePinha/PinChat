@@ -1,0 +1,70 @@
+.join-section {
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+    text-align: center;
+}
+
+.join-box {
+    max-width: 800px;
+    height: 50vh;
+    background-color: #5a7699;
+    color: #eaeaea;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.join-box header {
+    background-color: #485e7a;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 20px;
+}
+
+.join-box header > h2 {
+    font-size: 28px;
+    letter-spacing: 2.2px;
+    font-weight: lighter;
+}
+
+form {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+    text-align: left;
+    gap: 8px;
+}
+
+.form-control > input {
+    padding: 12px 8px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.submit-btn {
+    background-color: #1b232d;
+    color: #eaeaea;
+    width: 60%;
+    margin: 20px auto;
+    padding: 9px 22px;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: filter 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    filter: brightness(1.3);
+}
