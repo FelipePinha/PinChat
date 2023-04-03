@@ -6,13 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PinChat - Chatroom</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/chat.css">
+    <link rel="stylesheet" href="../css/scrollbar.css">
+
+    <script src="https://kit.fontawesome.com/523e6a491b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
     <section class="chat-section">
         <div class="chat-box">
-            <h2>Aiiiin chatzinhuuu</h2>
+            <header>
+                <h2><small>Pin</small><b>Chat</b></h2>
+                <a href="/" class="leave-chat-button">
+                    Sair do chat
+                </a>
+            </header>
+            <div class="chat-container">
+                <div class="chat-info">
+                    <div class="title-wrapper">
+                        <i class="fas fa-solid fa-user"></i>
+                        <h4>Usuários</h4>
+                    </div>
+                    <ul class="users-list">
+                        <li>Cicinho</li>
+                        <li>Mineiro</li>
+                        <li>Aloisio</li>
+                        <li>Júnior</li>
+                        <li>Amoroso</li>
+                    </ul>
+                </div>
+                <div class="chat-screen">
+                    <ul class="messages">
+                        <li>
+                            <h4>Aloisio</h4>
+
+                            <p>Fut hoje as 19:00 no Juca viu Mineiro, leva teus 10 conto.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="send-message-form">
+                <form>
+                    <input type="text" name="send" id="send" placeholder="Digite sua mensagem...">
+                    <button type="submit" id="submit">
+                        <i class="fas fa-regular fa-paper-plane"></i>
+                        Enviar
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
