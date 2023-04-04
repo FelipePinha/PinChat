@@ -97,6 +97,11 @@
     margin-bottom: 8px;
 }
 
+.messages p {
+    margin: 10px 0;
+    color: #8b8b8b;
+}
+
 .send-message-form {
     padding: 20px;
     background-color: #485e7a;

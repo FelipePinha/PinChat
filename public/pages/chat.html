@@ -44,17 +44,18 @@
                 </div>
                 <div class="chat-screen">
                     <ul class="messages">
-                        <li>
+                        <!-- <li>
                             <h4>Aloisio</h4>
 
                             <p>Fut hoje as 19:00 no Juca viu Mineiro, leva teus 10 conto.</p>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
             <div class="send-message-form">
-                <form>
-                    <input type="text" name="send" id="send" placeholder="Digite sua mensagem...">
+                <form id="chat-form">
+                    <input autocomplete="false" type="text" name="send" id="send" placeholder="Digite sua mensagem...">
+
                     <button type="submit" id="submit">
                         <i class="fas fa-regular fa-paper-plane"></i>
                         Enviar
@@ -64,6 +65,8 @@
         </div>
     </section>
 
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/main.js" type="module"></script>
 </body>
 
 </html>
