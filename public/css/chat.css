@@ -7,8 +7,7 @@
 
 .chat-box {
     margin: 50px auto;
-    width: 70%;
-    min-width: 300px;
+    width: 80%;
     background-color: #5a7699;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -128,4 +127,24 @@ form #submit {
     color: #fff;
     border: none;
     cursor: pointer;
+}
+
+@media (max-width: 583px) {
+    .chat-info .title-wrapper i {
+        display: none;
+    }
+}
+
+@media (max-width: 425px) {
+    .chat-info {
+        display: none;
+    }
+
+    .chat-screen {
+        width: 100%;
+    }
+
+    .chat-box {
+        width: 100%;
+    }
 }
