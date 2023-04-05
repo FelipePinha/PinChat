@@ -11,14 +11,20 @@ const __dirname = path.resolve();
 
 app.use(express.static(__dirname + "/public"));
 
-const users = [];
+let users = [];
 
 io.on("connection", socket => {
     socket.on("new user", data => {
-        users.push({ name: data, id: socket.id });
-        socket.emit("new user", users);
-        socket.emit("message", "Bem vindo ao chat");
-        socket.broadcast.emit("message", `${data} entrou no chat.`);
+        // find if user exist and create new user
+        const hasUser = users.findIndex(user => user.name === data);
+        if (hasUser === -1) {
+            users.push({ name: data, id: socket.id });
+            socket.emit("new user", { users, success: true });
+            socket.emit("message", "Bem vindo ao chat");
+            socket.broadcast.emit("message", `${data} entrou no chat.`);
+        } else {
+            socket.emit("new user", { success: false });
+        }
     });
 
     socket.on("chat message", user => {
@@ -26,7 +32,10 @@ io.on("connection", socket => {
     });
 
     socket.on("disconnect", () => {
-        io.emit("message", "Um usuário se desconectou");
+        const id = socket.id;
+        users = users.filter(user => user.id !== id);
+
+        io.emit("message", ` um usuário se desconectou`);
     });
 });
 

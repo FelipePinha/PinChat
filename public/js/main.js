@@ -13,10 +13,15 @@ const username = urlParams.get("name");
 socket.emit("new user", username);
 
 socket.on("new user", data => {
-    for (let i = 0; i < data.length; i++) {
-        const li = document.createElement("li");
-        li.textContent = data[i].name;
-        usersList.appendChild(li);
+    if (data.success) {
+        for (let i = 0; i < data.users.length; i++) {
+            const li = document.createElement("li");
+            li.textContent = data.users[i].name;
+            usersList.appendChild(li);
+        }
+    } else {
+        alert("Já existe um usuário com esse nome!");
+        window.location.href = "/";
     }
 
     socket.on("message", msg => {
@@ -42,8 +47,12 @@ socket.on("chat message", user => {
     newMessage.innerHTML = `
         <h4>${user.username}</h4>
 
-        <p>${user.msg}</p>
-    `;
+        <p>${user.msg}</p>        
+`;
+
+    if (user.username != username) {
+        newMessage.style.backgroundColor = "#a4b0c4";
+    }
 
     messageList.appendChild(newMessage);
     messageList.scrollTo(0, messageList.scrollHeight);
