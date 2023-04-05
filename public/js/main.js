@@ -1,5 +1,6 @@
 const socket = io();
 
+const usersList = document.querySelector(".users-list");
 const messageList = document.querySelector(".messages");
 const chatForm = document.getElementById("chat-form");
 const inputMsg = document.getElementById("send");
@@ -9,15 +10,15 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const username = urlParams.get("name");
 
-// socket.on("message", msg => {
-//     console.log(msg);
-//     // outputMessage(msg);
-// });
-
 socket.emit("new user", username);
 
 socket.on("new user", data => {
-    // console.log(data);
+    for (let i = 0; i < data.length; i++) {
+        const li = document.createElement("li");
+        li.textContent = data[i].name;
+        usersList.appendChild(li);
+    }
+
     socket.on("message", msg => {
         const p = document.createElement("p");
         p.textContent = msg;
