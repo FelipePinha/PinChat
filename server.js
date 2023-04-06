@@ -20,7 +20,7 @@ io.on("connection", socket => {
         if (hasUser === -1) {
             users.push({ name: data, id: socket.id });
             socket.emit("new user", { users, success: true });
-            socket.emit("message", "Bem vindo ao chat");
+            socket.emit("message", "Bem vindo(a) ao chat");
             socket.broadcast.emit("message", `${data} entrou no chat.`);
         } else {
             socket.emit("new user", { success: false });
@@ -33,9 +33,10 @@ io.on("connection", socket => {
 
     socket.on("disconnect", () => {
         const id = socket.id;
+        const deletedUser = users.filter(user => user.id === id);
         users = users.filter(user => user.id !== id);
 
-        io.emit("message", ` um usuário se desconectou`);
+        io.emit("message", ` ${deletedUser[0].name} saiu.`);
     });
 });
 
