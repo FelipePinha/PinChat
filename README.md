@@ -33,11 +33,6 @@ Para clonar e rodar este app, você precisa de <a href="https://git-scm.com/">Gi
   npm run start
 ```
 
-## Como funciona
-
-<p>Você entra no chat após escolher um nome de usuário, que não pode ser igual a um que já exista. Cada usuário é salvo em um array, que atualiza a medida que 
-as pessoas entram e saem. Os eventos são controlados pelo socket.io, que detecta quando uma mensagem esta para ser enviada, e assim ela é mostrada para todos os usuários.</p>
-
 ## Tecnologias usadas
 
 <ul>
