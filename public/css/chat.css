@@ -1,6 +1,5 @@
 .chat-section {
     width: 100%;
-    height: 100%;
     margin: 0 auto;
     padding: 0 2%;
     display: flex;
@@ -138,6 +137,7 @@ form #submit {
 
 @media (max-width: 480px) {
     .chat-section {
+        height: 90vh;
         padding: 0;
     }
 
@@ -148,7 +148,6 @@ form #submit {
     .chat-box {
         margin: 0;
         width: 100%;
-        height: 80vh;
         border-radius: 0 0 0 0;
     }
 
@@ -165,6 +164,6 @@ form #submit {
     }
 
     .chat-container {
-        height: 100%;
+        height: 94%;
     }
 }

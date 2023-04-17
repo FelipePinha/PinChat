@@ -14,11 +14,20 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/chat.css">
     <link rel="stylesheet" href="../css/scrollbar.css">
+    <link rel="stylesheet" href="../css/modal.css">
 
     <script src="https://kit.fontawesome.com/523e6a491b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
+    <div class="overlay">
+        <div class="modal">
+            <h2>Já existe uma pessoa com esse nome</h2>
+            <p>Escolha outro nome para se juntar ao chat.</p>
+            <button id="close-btn">Voltar</button>
+        </div>
+    </div>
 
     <section class="chat-section">
         <div class="chat-box">
