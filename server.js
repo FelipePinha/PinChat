@@ -35,8 +35,9 @@ io.on("connection", socket => {
         const id = socket.id;
         const deletedUser = users.filter(user => user.id === id);
         users = users.filter(user => user.id !== id);
-
-        io.emit("message", ` ${deletedUser[0].name} saiu.`);
+        if (deletedUser.length > 0) {
+            io.emit("message", ` ${deletedUser[0].name} saiu.`);
+        }
     });
 });
 
