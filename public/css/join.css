@@ -77,8 +77,35 @@ form {
 }
 
 @media (max-width: 425px) {
-    .submit-btn,
+    .join-section {
+        padding: 0;
+    }
+
+    .join-box {
+        border-radius: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .join-box header {
+        border-radius: 0 0 0 0;
+    }
+
+    form {
+        padding: 0 20px;
+    }
+
     .form-control {
-        width: 80%;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .form-control > input {
+        width: 100%;
+    }
+
+    .submit-btn {
+        width: 100%;
+        margin: 20px 0;
     }
 }
